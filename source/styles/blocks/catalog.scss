@@ -182,6 +182,10 @@
   @media (min-width: $desktop-width) {
     justify-content: flex-start;
     margin-top: 5px;
+
+    & .button {
+      width: 100%;
+    }
   }
 }
 
