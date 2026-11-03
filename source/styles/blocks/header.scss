@@ -1,5 +1,291 @@
-.header {
-  padding: 10px 15px;
-  color: #ffffff;
-  background-color: #663399;
+.page-header {
+  background-color: $color-white;
+}
+
+.page-header__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+
+  @media (min-width: $tablet-width) {
+    flex-wrap: nowrap;
+    padding: 0 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0 40px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  text-decoration: none;
+  color: $color-black;
+
+  @media (min-width: $tablet-width) {
+    margin-right: 20px;
+    padding-left: 0;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    border-radius: 4px;
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+
+  &__main {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  &__icon {
+    display: block;
+    flex-shrink: 0;
+    width: 32px;
+    height: 36px;
+    fill: $color-primary;
+  }
+
+  &__text {
+    @include logo-text;
+    display: none;
+
+    @media (min-width: $tablet-width) {
+      display: inline-block;
+    }
+  }
+
+  &__text-full {
+    display: none;
+
+    @media (min-width: $desktop-width) {
+      display: inline;
+    }
+  }
+
+  &__text-short {
+    display: inline;
+
+    @media (min-width: $desktop-width) {
+      display: none;
+    }
+  }
+
+  &__description {
+    display: none;
+
+    @media (min-width: $desktop-width) {
+      display: block;
+      width: 126px;
+      margin-left: 20px;
+
+      @include text-small;
+      color: inherit;
+    }
+  }
+}
+
+.main-nav {
+  display: block;
+  order: 4;
+  width: 100%;
+  background-color: $color-white;
+  border-top: 1px solid $color-secondary;
+
+  &--closed {
+    display: none;
+  }
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    order: 0;
+    width: auto;
+    background-color: transparent;
+    border-top: none;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media (min-width: $tablet-width) {
+      flex-flow: row wrap;
+      width: auto;
+    }
+
+    @media (min-width: $desktop-width) {
+      gap: 20px;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    padding: 24px 20px;
+    text-decoration: none;
+    color: $color-black;
+    border-bottom: 1px solid $color-secondary;
+    transition: color 0.3s, border-color 0.3s;
+
+    @include navigation-text;
+    @include header-link-states;
+
+    @media (min-width: $tablet-width) {
+      width: auto;
+      margin: 0;
+      padding: 32px 20px;
+      border-bottom: none;
+      box-shadow: inset 0 -2px 0 0 transparent;
+    }
+
+    @media (min-width: $tablet-width) {
+      &--active {
+        border-bottom-color: $color-primary;
+        box-shadow: inset 0 -2px 0 0 $color-primary;
+      }
+    }
+  }
+}
+
+.page-header__user-actions {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+
+  @media (min-width: $desktop-width) {
+    gap: 20px;
+  }
+}
+
+.user-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  text-decoration: none;
+  color: $color-black;
+  transition: color 0.3s;
+
+  @include header-link-states;
+
+  &__icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    fill: currentcolor;
+
+    @media (min-width: $desktop-width) {
+      margin-right: 8px;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @media (min-width: $desktop-width) {
+      display: inline-block;
+
+      @include navigation-text;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    width: auto;
+    height: auto;
+    padding: 32px 22px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 32px 20px;
+  }
+}
+
+.burger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  @include header-link-states;
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+
+  &__line {
+    position: relative;
+    display: block;
+    width: 16px;
+    height: 2px;
+    background-color: $color-black;
+
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      width: 16px;
+      height: 2px;
+      content: "";
+      background-color: $color-black;
+    }
+
+    &::before {
+      top: -5px;
+    }
+
+    &::after {
+      top: 5px;
+    }
+  }
+
+  .no-js & {
+    display: none;
+  }
+}
+
+.burger--active {
+  & .burger__line {
+    background-color: transparent;
+
+    &::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.no-js {
+  & .main-nav {
+    display: block;
+
+    @media (min-width: $tablet-width) {
+      display: flex;
+    }
+  }
 }

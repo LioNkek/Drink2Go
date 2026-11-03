@@ -1,0 +1,34 @@
+.footer-nav {
+  padding: 0 20px 27px;
+  border-bottom: 1px solid $color-light-grey;
+
+  @media (min-width: $tablet-width) {
+    padding: 0;
+    border-bottom: none;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 9px;
+    padding: 0 20px 20px;
+  }
+
+  &__title {
+    @include title-h4;
+    margin: 0 0 18px;
+    color: $color-primary;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    @include footer-link-states;
+    @include navigation-text;
+  }
+}

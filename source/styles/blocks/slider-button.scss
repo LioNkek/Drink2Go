@@ -1,0 +1,34 @@
+.slider-button {
+  @include slider-arrow-base;
+
+  &__icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    color: $color-primary;
+    transition: transform 0.3s ease, color 0.3s ease;
+    fill: currentcolor;
+  }
+
+  &:disabled {
+    background: none;
+    cursor: default;
+    pointer-events: none;
+
+    & .slider-button__icon {
+      color: $color-grey;
+    }
+  }
+
+  &--prev {
+    @include slider-arrow-left-states;
+
+    & .slider-button__icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  &--next {
+    @include slider-arrow-right-states;
+  }
+}

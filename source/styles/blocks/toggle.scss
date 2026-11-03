@@ -1,0 +1,61 @@
+.toggle {
+  position: relative;
+  display: inline-block;
+
+  &__input {
+    @include visually-hidden-input;
+  }
+
+  &__label {
+    @include toggle-label;
+  }
+
+  &__input:not(:disabled):hover + &__label,
+  &__input:not(:disabled):focus-visible + &__label,
+  &__input:not(:disabled):checked:hover + &__label,
+  &__input:not(:disabled):checked:focus-visible + &__label {
+    &::before {
+      background-color: $color-primary-opacity;
+      border: 2px solid $color-primary-lighter;
+    }
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &__input:checked + &__label {
+    &::before {
+      background-color: $color-primary;
+    }
+
+    &::after {
+      background-color: $color-white;
+      transform: translateX(18px);
+    }
+  }
+
+  &__input:disabled + &__label {
+    color: $color-light-grey;
+    cursor: default;
+
+    &::before {
+      background-color: $color-light-grey;
+    }
+
+    &::after {
+      background-color: $color-bg-lightest-grey;
+    }
+  }
+
+  &__input:disabled:checked + &__label {
+    &::before {
+      background-color: $color-light-grey;
+    }
+
+    &::after {
+      background-color: $color-grey;
+      transform: translateX(18px);
+    }
+  }
+}

@@ -1,0 +1,90 @@
+.pagination {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 10px;
+
+  @media (min-width: $tablet-width) {
+    justify-content: end;
+    margin-top: 72px;
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+}
+
+.pagination__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination__button {
+  @include pagination-button;
+  @include page-text;
+
+  padding: 8px;
+
+  &-icon {
+    display: block;
+    width: 10px;
+    height: 10px;
+    transition: fill 0.2s ease;
+    fill: currentcolor;
+
+    @media (min-width: $tablet-width) {
+      display: none;
+    }
+  }
+
+  &-text {
+    display: none;
+
+    @media (min-width: $tablet-width) {
+      display: inline-block;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    min-width: 40px;
+
+    &--prev,
+    &--next {
+      min-width: auto;
+      padding: 8px 20px;
+    }
+  }
+
+  &--prev .pagination__button-icon {
+    transform: rotate(180deg);
+  }
+
+  &--current {
+    text-decoration: none;
+    color: $color-black;
+    background-color: transparent;
+    cursor: default;
+    pointer-events: none;
+
+    @include label;
+  }
+
+  &--hidden {
+    background-color: transparent;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.pagination__item {
+  display: flex;
+}

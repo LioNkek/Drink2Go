@@ -1,0 +1,177 @@
+.promo {
+  position: relative;
+  overflow: hidden;
+
+  @media (min-width: $tablet-width) {
+    padding-bottom: 187px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-bottom: 0;
+  }
+}
+
+.promo__slider {
+  position: relative;
+  overflow: visible;
+}
+
+.promo__slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.promo__slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+
+  &--flat-white {
+    background-color: $color-bg-flat-white;
+  }
+
+  &--lavender {
+    background-color: $color-bg-lavender-latte;
+  }
+
+  &--espresso {
+    background-color: $color-bg-espresso;
+  }
+}
+
+.promo__container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 60px;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: column;
+    padding: 60px 80px 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row-reverse;
+    gap: 30px;
+    justify-content: center;
+    padding: 30px 80px 84px 105px;
+  }
+}
+
+.promo__content {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 0;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    align-items: flex-start;
+    margin-bottom: 9px;
+    text-align: left;
+  }
+}
+
+.promo__badge {
+  @include badge;
+  margin-bottom: 4px;
+  color: $color-primary;
+}
+
+.promo__title {
+  @include slider-heading;
+  margin: 0 0 10px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 16px;
+  }
+}
+
+.promo__description {
+  @include slider-description;
+  margin: 0 0 20px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0 0 40px;
+  }
+}
+
+.promo__price-wrapper {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.promo__old-price {
+  @include old-price;
+  color: $color-primary;
+}
+
+.promo__price {
+  @include price;
+  margin-right: 14px;
+  color: $color-black;
+}
+
+.promo__image-wrapper {
+  flex-shrink: 0;
+  margin-bottom: 10px;
+
+  @media (min-width: $tablet-width) {
+    z-index: 2;
+    margin-bottom: -187px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 0;
+  }
+}
+
+.promo__image {
+  display: block;
+  width: 280px;
+  height: auto;
+
+  @media (min-width: $tablet-width) {
+    width: 476px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 600px;
+  }
+}
+
+.promo__arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  height: 100%;
+}
+
+.promo__arrow--prev {
+  left: 0;
+}
+
+.promo__arrow--next {
+  right: 0;
+}
+
+.promo .promo__pagination {
+  position: absolute;
+  right: 0;
+  bottom: 60px;
+  left: 0;
+  z-index: 10;
+}

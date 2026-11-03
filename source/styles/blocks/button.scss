@@ -1,0 +1,12 @@
+.button {
+  @include button-base;
+  @include page-text;
+
+  &--primary {
+    @include button-primary-colors;
+  }
+
+  &--secondary {
+    @include button-secondary-colors;
+  }
+}

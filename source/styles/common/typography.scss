@@ -1,0 +1,154 @@
+/* ============ HEADINGS ============ */
+
+/* Заголовок слайдера */
+@mixin slider-heading {
+  font-size: 36px;
+  font-weight: $font-weight-bold;
+  line-height: 48px;
+  letter-spacing: 0.02em;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    font-size: 56px;
+    line-height: 80px;
+  }
+
+  @media (min-width: $desktop-width) {
+    text-align: left;
+  }
+}
+
+/* Описание слайдера */
+@mixin slider-description {
+  font-size: 14px;
+  font-weight: $font-weight-regular;
+  line-height: 20px;
+  letter-spacing: 0;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  @media (min-width: $desktop-width) {
+    text-align: left;
+  }
+}
+
+/* Заголовок H2 */
+@mixin title-h2 {
+  font-size: 24px;
+  font-weight: $font-weight-bold;
+  line-height: 36px;
+  letter-spacing: 0;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    font-size: 42px;
+    line-height: 64px;
+  }
+}
+
+/* Заголовок H3 */
+@mixin title-h3 {
+  font-size: 18px;
+  font-weight: $font-weight-bold;
+  line-height: 32px;
+  letter-spacing: 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+/* Заголовок H4 */
+@mixin title-h4 {
+  font-size: 14px;
+  font-weight: $font-weight-bold;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+}
+
+/* ============ TEXT ============ */
+
+/* Бейдж */
+@mixin badge {
+  font-size: 12px;
+  font-weight: $font-weight-bold;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Цена */
+@mixin price {
+  font-size: 20px;
+  font-weight: $font-weight-semibold;
+  line-height: 32px;
+  letter-spacing: 0;
+}
+
+/* Старая цена */
+@mixin old-price {
+  font-size: 16px;
+  font-weight: $font-weight-regular;
+  line-height: 32px;
+  letter-spacing: 0;
+  text-decoration: line-through;
+}
+
+/* Лейбл */
+@mixin label {
+  font-size: 16px;
+  font-weight: $font-weight-semibold;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+/* Текст логотипа */
+@mixin logo-text {
+  font-size: 24px;
+  font-weight: $font-weight-extrabold;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* Текст навигации */
+@mixin navigation-text {
+  font-size: 12px;
+  font-weight: $font-weight-medium;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* Описание товара */
+@mixin text-description {
+  font-size: 14px;
+  font-weight: $font-weight-regular;
+  line-height: 20px;
+  letter-spacing: 0;
+}
+
+/* Мелкий текст */
+@mixin text-small {
+  font-size: 12px;
+  font-weight: $font-weight-regular;
+  line-height: 16px;
+  letter-spacing: 0;
+}
+
+/* Номер страници и текст кнопок назад/вперед */
+@mixin page-text {
+  font-size: 16px;
+  font-weight: $font-weight-regular;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-align: center;
+}

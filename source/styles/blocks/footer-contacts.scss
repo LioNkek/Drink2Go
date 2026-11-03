@@ -1,0 +1,53 @@
+.footer-contacts {
+  padding: 0 20px 19px;
+  border-bottom: 1px solid $color-light-grey;
+
+  @media (min-width: $tablet-width) {
+    padding: 0;
+    border-bottom: none;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 9px;
+  }
+
+  &__title {
+    @include title-h4;
+    margin: 0 0 22px;
+    color: $color-primary;
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-style: normal;
+  }
+
+  &__link {
+    @include text-description;
+    display: flex;
+    gap: 7px;
+    align-items: flex-start;
+    text-align: left;
+    text-decoration: none;
+    color: $color-black;
+    transition: color 0.3s;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-primary;
+      outline: none;
+    }
+
+    &--phone {
+      align-items: center;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+    fill: $color-primary;
+  }
+}
