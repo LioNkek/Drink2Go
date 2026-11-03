@@ -65,5 +65,9 @@
       @include page-text;
       text-align: start;
     }
+
+    @media (min-width: $tablet-width) {
+      text-align: center;
+    }
   }
 }
